@@ -1,0 +1,21 @@
+Package: ggroove
+Title: Album Inspired Color Palettes
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Dan",
+           family = "Ovando",
+           role = c("aut", "cre"),
+           email = "dovando07@gmail.com",
+           comment = c(ORCID = "0000-0003-2120-7345"))
+Description: Produces color palettes inspired by album cover art, starting with the studio LPs of Radiohead
+License: MIT + file LICENSE
+Suggests: 
+    testthat
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
+Imports: 
+    ggplot2

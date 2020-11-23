@@ -1,0 +1,49 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# ggroove
+
+There are two colors in my head. But we'll need a few more to make plots. 
+
+`ggroove` is a package of ggplot2 color palette functions based on album art. 
+
+The first entry is from Radiohead
+
+`scale_fill_radiohead_d(album = "kid_a")` will create a discreate fill palette
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(ggroove)
+library(palmerpenguins)
+
+penguins %>%
+  ggplot(aes(body_mass_g,flipper_length_mm, fill =  bill_length_mm)) +
+  geom_point(shape = 21) +
+  scale_fill_radiohead_c(album = "in_rainbows")
+
+
+penguins %>%
+  ggplot(aes(body_mass_g,flipper_length_mm, fill =  island)) +
+  geom_point(shape = 21) +
+  scale_fill_radiohead_d(album = "king_of_limbs")
+
+gapminder::gapminder %>%
+  ggplot(aes(lifeExp, fill =  continent)) +
+  geom_histogram(show.legend = TRUE, color = "black") +
+  scale_fill_radiohead_d(album = "amnesiac") +
+  theme_minimal()
+```
+
