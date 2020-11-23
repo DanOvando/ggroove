@@ -16,6 +16,8 @@ The first entry is from Radiohead
 `scale_fill_radiohead_d(album = "kid_a")` will create a discrete fill
 palette
 
+Here are some penguins.
+
 ``` r
 library(ggplot2)
 library(dplyr)
