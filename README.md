@@ -44,8 +44,8 @@ penguins %>%
 
 penguins %>%
   ggplot(aes(body_mass_g,flipper_length_mm, fill =  island)) +
-  geom_point(shape = 21, size = 4) +
-  scale_fill_radiohead_d(album = "king_of_limbs")
+  geom_point(shape = 21, size = 4, alpha = 0.5) +
+  scale_fill_radiohead_d(album = "kid_a")
 #> Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -54,10 +54,11 @@ penguins %>%
 ``` r
 
 gapminder::gapminder %>%
-  ggplot(aes(lifeExp, fill =  continent)) +
-  geom_histogram(show.legend = TRUE, color = "black") +
-  scale_fill_radiohead_d(album = "amnesiac") +
-  theme_minimal()
+  ggplot(aes(lifeExp, fill =  country)) +
+  geom_histogram(show.legend = FALSE) +
+  scale_fill_radiohead_d(album = "ok_computer") +
+  theme_minimal() + 
+  theme_dark()
 #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 

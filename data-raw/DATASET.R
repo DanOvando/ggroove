@@ -16,14 +16,13 @@ ggroove_db$radiohead$in_rainbows <- c(
 )
 
 ggroove_db$radiohead$ok_computer <- c(
-"#f7f4faff",
-"#3a4851ff",
-"#3a4851ff",
-"#6c9cdeff",
-"#b1a0c4ff",
-"#d7e4f2ff",
-"#f7f7f7ff",
-"#6f8299ff"
+"#f7f8f3ff",
+"#dae6f2ff",
+"#7b97afff",
+"#c16e49ff",
+"#745c84ff",
+"#3a65bbff",
+"#000000ff"
 )
 
 ggroove_db$radiohead$kid_a <- c(
@@ -55,117 +54,6 @@ ggroove_db$radiohead$amnesiac <- c(
 usethis::use_data(ggroove_db, overwrite = TRUE)
 
 
-
-album <- function(n, alpha = 1, begin = 0, end = 1, direction = 1,
-                 lp = "in_rainbows") {
-
-  if (!lp %in% names(ggroove_db$radiohead)) {
-    stop("This isn't happening. Album name misspelled or not yet available")
-  }
-
-  if (begin < 0 | begin > 1 | end < 0 | end > 1) {
-    stop("begin and end must be in [0,1]")
-  }
-
-  if (abs(direction) != 1) {
-    stop("direction must be 1 or -1")
-  }
-
-  if (direction == -1) {
-    tmp <- begin
-    begin <- end
-    end <- tmp
-  }
-  map <- ggroove_db$radiohead[[lp]]
-
-  fn_cols <- grDevices::colorRamp(map, space = "Lab",
-                                  interpolate = "spline")
-  cols <- fn_cols(seq(begin, end, length.out = n)) / 255
-  grDevices::rgb(cols[, 1], cols[, 2], cols[, 3], alpha = alpha)
-}
-
-
-ggroove_pal <- function(alpha = 1, begin = 0, end = 1, direction = 1,
-                     lp = "in_rainbows") {
-
-
-  function(n) {
-    album(n, alpha, begin, end, direction, lp = lp)
-  }
-}
-
-scale_color_radiohead <- function(..., alpha = 1, begin = 0, end = 1,
-                                 direction = 1, album = "in_rainbows", values = NULL,
-                                 space = "Lab", na.value = "grey50",
-                                 guide = "colourbar", aesthetics = "color",
-                                 discrete = TRUE) {
-
-
-  ggplot2::discrete_scale(aesthetics, "radiohead",
-                 ggroove_pal(alpha, begin, end, direction, album))
-
-  # scale_color_gradientn(colours =
-  #                         album(256, alpha, begin, end, direction, lp = "in_rainbows"))
-
-
-}
-
-scale_fill_radiohead_d <- function(..., alpha = 1, begin = 0, end = 1,
-                                  direction = 1, album = "in_rainbows", values = NULL,
-                                  space = "Lab", na.value = "grey50",
-                                  guide = "colourbar", aesthetics = "fill",
-                                  discrete = TRUE) {
-
-
-  ggplot2::discrete_scale(aesthetics, "radiohead",
-                          ggroove_pal(alpha, begin, end, direction, album))
-
-  # scale_color_gradientn(colours =
-  #                         album(256, alpha, begin, end, direction, lp = "in_rainbows"))
-
-
-}
-
-scale_fill_radiohead_c <- function(..., alpha = 1, begin = 0, end = 1,
-                                   direction = 1, album = "in_rainbows", values = NULL,
-                                   space = "Lab", na.value = "grey50",
-                                   guide = "colourbar", aesthetics = "fill",
-                                   discrete = TRUE) {
-
-  #
-  # ggplot2::discrete_scale(aesthetics, "radiohead",
-  #                         ggroove_pal(alpha, begin, end, direction, album))
-  #
-  ggplot2::scale_fill_gradientn(colours =
-                          album(256, alpha, begin, end, direction, lp = album))
-
-
-}
-
-library(palmerpenguins)
-library(ggplot2)
-
-penguins %>%
-  ggplot(aes(body_mass_g,flipper_length_mm, fill =  bill_length_mm)) +
-  geom_point(shape = 21) +
-  scale_fill_radiohead_c(album = "in_rainbows")
-
-
-penguins %>%
-  ggplot(aes(body_mass_g,flipper_length_mm, fill =  island)) +
-  geom_point(shape = 21) +
-  scale_fill_radiohead_d(album = "king_of_limbs")
-
-gapminder::gapminder %>%
-  ggplot(aes(lifeExp, fill =  continent)) +
-  geom_histogram(show.legend = TRUE, color = "black") +
-  scale_fill_radiohead_d(album = "amnesiac") +
-  theme_minimal()
-
-
-
-  # scale_color_gradientn(colours =
-  #                         album(256, alpha, begin, end, direction, lp = "in_rainbows"))
 
 
 

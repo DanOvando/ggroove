@@ -1,3 +1,6 @@
+# misc
+*.svg
+
 # History files
 .Rhistory
 .Rapp.history
