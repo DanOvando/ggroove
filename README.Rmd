@@ -13,6 +13,16 @@ knitr::opts_chunk$set(
 )
 ```
 
+
+```{r, echo = FALSE}
+library(png)
+test <- readPNG(here::here("data","bear.png"))
+
+img.r <- as.raster(test,interpolate=F)
+
+plot(img.r)
+```
+
 # ggroove
 
 There are two colors in my head. But we'll need a few more to make plots. 

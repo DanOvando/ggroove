@@ -1,6 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+
 # ggroove
 
 There are two colors in my head. But we’ll need a few more to make
@@ -35,7 +37,7 @@ penguins %>%
 #> Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
 ``` r
 
@@ -47,7 +49,7 @@ penguins %>%
 #> Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-2.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-3-2.png" width="100%" />
 
 ``` r
 
@@ -59,4 +61,4 @@ gapminder::gapminder %>%
 #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-3.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-3-3.png" width="100%" />
