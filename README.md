@@ -32,7 +32,7 @@ library(palmerpenguins)
 
 penguins %>%
   ggplot(aes(body_mass_g,flipper_length_mm, fill =  bill_length_mm)) +
-  geom_point(shape = 21) +
+  geom_point(shape = 21, size = 4) +
   scale_fill_radiohead_c(album = "in_rainbows")
 #> Warning: Removed 2 rows containing missing values (geom_point).
 ```
@@ -44,7 +44,7 @@ penguins %>%
 
 penguins %>%
   ggplot(aes(body_mass_g,flipper_length_mm, fill =  island)) +
-  geom_point(shape = 21) +
+  geom_point(shape = 21, size = 4) +
   scale_fill_radiohead_d(album = "king_of_limbs")
 #> Warning: Removed 2 rows containing missing values (geom_point).
 ```
