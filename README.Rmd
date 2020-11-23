@@ -31,7 +31,7 @@ There are two colors in my head. But we'll need a few more to make plots.
 
 The first entry is from Radiohead
 
-`scale_fill_radiohead_d(album = "kid_a")` will create a discreate fill palette
+`scale_fill_radiohead_d(album = "kid_a")` will create a discrete fill palette
 
 ```{r}
 library(ggplot2)

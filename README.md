@@ -13,7 +13,7 @@ art.
 
 The first entry is from Radiohead
 
-`scale_fill_radiohead_d(album = "kid_a")` will create a discreate fill
+`scale_fill_radiohead_d(album = "kid_a")` will create a discrete fill
 palette
 
 ``` r
