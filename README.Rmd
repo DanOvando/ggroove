@@ -47,6 +47,14 @@ There are two colors in my head. But we'll need a few more to make plots.
 
 `ggroove` is a package of ggplot2 color palette functions based on album art.
 
+You can install the development version here
+
+```{r, eval=FALSE}
+remotes::install_github("danovando/ggroove")
+
+```
+
+
 The first entry is from Radiohead, which gets a series of specific functions in the form
 
 `scale_fill_radiohead_d` and `scale_color_radiohead_c`

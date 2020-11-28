@@ -9,6 +9,12 @@ plots.
 `ggroove` is a package of ggplot2 color palette functions based on album
 art.
 
+You can install the development version here
+
+``` r
+remotes::install_github("danovando/ggroove")
+```
+
 The first entry is from Radiohead, which gets a series of specific
 functions in the form
 
@@ -33,7 +39,7 @@ got a few discrete categories rock on.
 plot_palette(lp = "pablo_honey")
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
 ### The Bends
 
@@ -41,7 +47,7 @@ plot_palette(lp = "pablo_honey")
 plot_palette(lp = "the_bends")
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
 ### OK Computer
 
@@ -50,7 +56,7 @@ plot_palette(lp = "the_bends")
 plot_palette(lp = "ok_computer")
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
 ### Kid A
 
@@ -59,7 +65,7 @@ plot_palette(lp = "ok_computer")
 plot_palette(lp = "kid_a")
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
 
 ### Amnesiac
 
@@ -67,7 +73,7 @@ plot_palette(lp = "kid_a")
 plot_palette(lp = "amnesiac")
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
 
 ### Hail to the Thief
 
@@ -75,7 +81,7 @@ plot_palette(lp = "amnesiac")
 plot_palette(lp = "hail_to_the_thief")
 ```
 
-<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-9-1.png" width="100%" />
 
 ### In Rainbows
 
@@ -83,7 +89,7 @@ plot_palette(lp = "hail_to_the_thief")
 plot_palette(lp = "in_rainbows")
 ```
 
-<img src="man/figures/README-unnamed-chunk-9-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-10-1.png" width="100%" />
 
 ### The King of Limbs
 
@@ -91,7 +97,7 @@ plot_palette(lp = "in_rainbows")
 plot_palette(lp = "the_king_of_limbs")
 ```
 
-<img src="man/figures/README-unnamed-chunk-10-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-11-1.png" width="100%" />
 
 ### A Moon Shaped Pool
 
@@ -99,7 +105,7 @@ plot_palette(lp = "the_king_of_limbs")
 plot_palette(lp = "a_moon_shaped_pool")
 ```
 
-<img src="man/figures/README-unnamed-chunk-11-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-12-1.png" width="100%" />
 \#\# How to Use
 
 We’ll use data from `gapminder` and `palmerpenguins` to demonstrate
@@ -132,7 +138,7 @@ penguins %>%
 #> Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
-<img src="man/figures/README-unnamed-chunk-12-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-13-1.png" width="100%" />
 
 ### A better use with discrete Fills
 
@@ -149,7 +155,7 @@ gapminder::gapminder %>%
 #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="man/figures/README-unnamed-chunk-13-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-14-1.png" width="100%" />
 
 ### … The Beatles\!
 
@@ -166,4 +172,4 @@ gapminder::gapminder %>%
 #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="man/figures/README-unnamed-chunk-14-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-15-1.png" width="100%" />
