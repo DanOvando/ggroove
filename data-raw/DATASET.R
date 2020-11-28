@@ -1,7 +1,13 @@
 ## code to prepare `DATASET` dataset goes here
-
+library(tibble)
+library(dplyr)
 
 ggroove_db <- tibble(artist = NULL, album = NULL, hex = NULL, order = NULL)
+
+
+# radiohead ---------------------------------------------------------------
+
+
 
 in_rainbows <-
   tibble(
@@ -83,12 +89,74 @@ ggroove_db <- ggroove_db %>%
   bind_rows(kol)
 
 
+httt <- tibble(artist = "radiohead", album = "hail_to_the_thief",hex = c(
+"#88a2c0ff",
+"#f6f5c1ff",
+"#20521dff",
+"#e13710ff",
+"#283488ff",
+"#202913ff"
+)) %>%
+  mutate(order = 1:nrow(.))
+
+ggroove_db <- ggroove_db %>%
+  bind_rows(httt)
+
+bends <- tibble(artist = "radiohead", album = "the_bends",hex = c(
+"#010101ff",
+"#e8160fff",
+"#f2953bff",
+"#f5cfa2ff",
+"#f5efbbff",
+"#efedddff"
+)) %>%
+  mutate(order = 1:nrow(.))
+
+ggroove_db <- ggroove_db %>%
+  bind_rows(bends)
+
+pablo <- tibble(artist = "radiohead", album = "pablo_honey",hex = c(
+"#e2ead2ff",
+"#f1da3fff",
+"#7dba63ff",
+"#ce2117ff",
+"#396293ff",
+"#2a0a43ff"
+)) %>%
+  mutate(order = 1:nrow(.))
+
+ggroove_db <- ggroove_db %>%
+  bind_rows(pablo)
+
+moon <- tibble(artist = "radiohead", album = "a_moon_shaped_pool",hex = c(
+"#e3e2e7ff",
+"#97969bff",
+"#555258ff",
+"#151311ff",
+"#46888bff",
+"#c7523eff"
+)) %>%
+  mutate(order = 1:nrow(.))
+
+ggroove_db <- ggroove_db %>%
+  bind_rows(moon)
+
+
+
+
+
+# the beatles -------------------------------------------------------------
+
+
+
 white_album <- tibble(artist = "the_beatles", album = "the_white_album",hex = c(
   "#fffeefff")) %>%
   mutate(order = 1:nrow(.))
 
 ggroove_db <- ggroove_db %>%
   bind_rows(white_album)
+
+
 
 
 usethis::use_data(ggroove_db, overwrite = TRUE)

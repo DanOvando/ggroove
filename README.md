@@ -25,54 +25,87 @@ to convey information.
 I wouldn’t recommend using these for continuous color scales, if you’ve
 got a few discrete categories rock on.
 
-## OK Computer
+### Radiohead Palettes
+
+### Pablo Honey
+
+``` r
+plot_palette(lp = "pablo_honey")
+```
+
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+
+### The Bends
+
+``` r
+plot_palette(lp = "the_bends")
+```
+
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+
+### OK Computer
 
 ``` r
 
 plot_palette(lp = "ok_computer")
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
-## Kid A
+### Kid A
 
 ``` r
 
 plot_palette(lp = "kid_a")
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
-## Amnesiac
+### Amnesiac
 
 ``` r
 plot_palette(lp = "amnesiac")
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
 
-## In Rainbows
+### Hail to the Thief
+
+``` r
+plot_palette(lp = "hail_to_the_thief")
+```
+
+<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
+
+### In Rainbows
 
 ``` r
 plot_palette(lp = "in_rainbows")
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-9-1.png" width="100%" />
 
-## The King of Limbs
+### The King of Limbs
 
 ``` r
 plot_palette(lp = "the_king_of_limbs")
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-10-1.png" width="100%" />
 
-# How to Use
+### A Moon Shaped Pool
+
+``` r
+plot_palette(lp = "a_moon_shaped_pool")
+```
+
+<img src="man/figures/README-unnamed-chunk-11-1.png" width="100%" />
+\#\# How to Use
 
 We’ll use data from `gapminder` and `palmerpenguins` to demonstrate
 `ggroove`.
 
-## A continous colorramp
+### A continous colorramp
 
 Here’s a continuous colorramp based on OK Computer (again, probably best
 not to use this for continuous scales\!)
@@ -99,9 +132,9 @@ penguins %>%
 #> Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
-<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-12-1.png" width="100%" />
 
-## A better use with discrete Fills
+### A better use with discrete Fills
 
 Here’s a more appropriate example showing discrete fills
 
@@ -116,9 +149,9 @@ gapminder::gapminder %>%
 #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="man/figures/README-unnamed-chunk-9-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-13-1.png" width="100%" />
 
-## … The Beatles\!
+### … The Beatles\!
 
 And one more with The Beatles\!
 
@@ -133,4 +166,4 @@ gapminder::gapminder %>%
 #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="man/figures/README-unnamed-chunk-10-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-14-1.png" width="100%" />
