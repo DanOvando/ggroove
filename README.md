@@ -1,9 +1,7 @@
 
+# ggroove <img src="logo.png" align="right" width="120" />
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
-
-# ggroove
 
 There are two colors in my head. But we’ll need a few more to make
 plots.
