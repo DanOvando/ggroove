@@ -16,6 +16,9 @@ functions in the form
 
 `scale_fill_radiohead_d` and `scale_color_radiohead_c`
 
+But, plenty more to come, and a portal to upload your own album-inspired
+color palettes is in the works\!
+
 A quick note, there’s a lot of science out there on how to construct
 color palettes that accurately convey information. These are not those.
 Color schemes that make for great album art are not necessarily designed
