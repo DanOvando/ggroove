@@ -11,12 +11,70 @@ plots.
 `ggroove` is a package of ggplot2 color palette functions based on album
 art.
 
-The first entry is from Radiohead
+The first entry is from Radiohead, which gets a series of specific
+functions in the form
 
-`scale_fill_radiohead_d(album = "kid_a")` will create a discrete fill
-palette
+`scale_fill_radiohead_d` and `scale_color_radiohead_c`
 
-Here are some penguins.
+A quick note, there’s a lot of science out there on how to construct
+color palettes that accurately convey information. These are not those.
+Color schemes that make for great album art are not necessarily designed
+to convey information.
+
+I wouldn’t recommend using these for continuous color scales, if you’ve
+got a few discrete categories rock on.
+
+## OK Computer
+
+``` r
+
+plot_palette(lp = "ok_computer")
+```
+
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+
+## Kid A
+
+``` r
+
+plot_palette(lp = "kid_a")
+```
+
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+
+## Amnesiac
+
+``` r
+plot_palette(lp = "amnesiac")
+```
+
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+
+## In Rainbows
+
+``` r
+plot_palette(lp = "in_rainbows")
+```
+
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+
+## The King of Limbs
+
+``` r
+plot_palette(lp = "the_king_of_limbs")
+```
+
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+
+# How to Use
+
+We’ll use data from `gapminder` and `palmerpenguins` to demonstrate
+`ggroove`.
+
+## A continous colorramp
+
+Here’s a continuous colorramp based on OK Computer (again, probably best
+not to use this for continuous scales\!)
 
 ``` r
 library(ggplot2)
@@ -31,37 +89,47 @@ library(dplyr)
 #>     intersect, setdiff, setequal, union
 library(ggroove)
 library(palmerpenguins)
+library(gapminder)
 
-penguins %>%
-  ggplot(aes(body_mass_g,flipper_length_mm, fill =  bill_length_mm)) +
-  geom_point(shape = 21, size = 4) +
-  scale_fill_radiohead_c(album = "in_rainbows")
+penguins %>% 
+  ggplot(aes(bill_length_mm, bill_depth_mm, color = body_mass_g)) + 
+  geom_point(size = 4) + 
+  scale_color_radiohead_c(album = "ok_computer")
 #> Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
 
-``` r
+## A better use with discrete Fills
 
-
-penguins %>%
-  ggplot(aes(body_mass_g,flipper_length_mm, fill =  island)) +
-  geom_point(shape = 21, size = 4, alpha = 0.5) +
-  scale_fill_radiohead_d(album = "kid_a")
-#> Warning: Removed 2 rows containing missing values (geom_point).
-```
-
-<img src="man/figures/README-unnamed-chunk-3-2.png" width="100%" />
+Here’s a more appropriate example showing discrete fills
 
 ``` r
 
 gapminder::gapminder %>%
   ggplot(aes(lifeExp, fill =  country)) +
   geom_histogram(show.legend = FALSE) +
-  scale_fill_radiohead_d(album = "ok_computer") +
+  scale_fill_radiohead_d(album = "in_rainbows") +
   theme_minimal() + 
   theme_dark()
 #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-3.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-9-1.png" width="100%" />
+
+## … The Beatles\!
+
+And one more with The Beatles\!
+
+``` r
+
+gapminder::gapminder %>%
+  ggplot(aes(lifeExp, fill =  continent)) +
+  geom_histogram(show.legend = TRUE, color = "black") +
+  scale_fill_album_d(album = "the_white_album") +
+  theme_minimal() + 
+  theme_dark()
+#> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
+<img src="man/figures/README-unnamed-chunk-10-1.png" width="100%" />

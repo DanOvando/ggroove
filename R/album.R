@@ -13,7 +13,7 @@
 album <- function(n, alpha = 1, begin = 0, end = 1, direction = 1,
                   lp = "in_rainbows") {
 
-  if (!lp %in% names(ggroove::ggroove_db$radiohead)) {
+  if (!lp %in% ggroove::ggroove_db$album) {
     stop("This isn't happening. Album name misspelled or not yet available")
   }
 
@@ -30,7 +30,9 @@ album <- function(n, alpha = 1, begin = 0, end = 1, direction = 1,
     begin <- end
     end <- tmp
   }
-  map <- ggroove::ggroove_db$radiohead[[lp]]
+  # map <- ggroove::ggroove_db$radiohead[[lp]]
+
+  map <- ggroove::ggroove_db$hex[ggroove_db$album == lp]
 
   fn_cols <- grDevices::colorRamp(map, space = "Lab",
                                   interpolate = "spline")
