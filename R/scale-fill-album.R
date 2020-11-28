@@ -1,6 +1,5 @@
 
-#' scale_fill_album
-#' discrete
+#' scale_fill_album_d
 #'
 #' @param ...
 #' @param alpha
