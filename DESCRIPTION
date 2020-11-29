@@ -11,7 +11,9 @@ Description: Produces color palettes inspired by album cover art, starting with 
 License: MIT + file LICENSE
 URL: https://github.com/DanOvando/ggroove
 Suggests: 
-    testthat
+    testthat,
+    knitr,
+    rmarkdown
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
@@ -20,3 +22,4 @@ Depends:
     R (>= 2.10)
 Imports: 
     ggplot2
+VignetteBuilder: knitr

@@ -1,0 +1,24 @@
+---
+title: "contributing"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{contributing}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+There are two ways to contribute album-art inspried color palettes to `ggroove`. If you're comfortable with git + GitHub, you can simply fork and create a branch of the repo, and submit your changes as a pull request. 
+
+The color palettes are stored rather inelegantly in data-raw/DATASET.R
+
+Basically, to add a new palette just follow the template of the other palettes and use `dplyr::bind_rows` to add your new palette onto the database. See example [here](https://github.com/DanOvando/ggroove/blob/8b952161cac6d37b59f1e3bb414e164935436889/data-raw/DATASET.R#L131)
+
+If doesn't sound like your jam,  you can submit an [issue](https://github.com/DanOvando/ggroove/issues), and select the template for requesting a color palette to be added. You can then manually add your palette into the table template created for you there, submit your issue, and someone will get back to you when they can. 
+
