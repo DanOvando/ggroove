@@ -3,8 +3,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-There are two colors in my head. But we’ll need a few more to make
-plots.
+[There are two colors in my head](https://youtu.be/NUnXxh5U25Y?t=132).
+But we’ll need a few more to make plots.
 
 `ggroove` is a package of color palettes and ggplot2 `scale_` functions
 inspired by various album covers.
@@ -15,8 +15,9 @@ You can install the development version here
 remotes::install_github("danovando/ggroove")
 ```
 
-The first entries in the `ggroove` library come from Radiohead’s studio
-LPs, which gets a series of specific functions in the form
+The first entries in the `ggroove` library come from
+[Radiohead’s](https://radiohead.com/library/) studio LPs, which gets a
+series of specific functions in the form
 
 `scale_fill_radiohead_d` and `scale_color_radiohead_c`, where `_d`
 indicates discrete and `_c` indicates continuous.
@@ -113,7 +114,8 @@ plot_palette(lp = "a_moon_shaped_pool")
 ```
 
 <img src="man/figures/README-unnamed-chunk-12-1.png" width="100%" />
-\#\# How to Use
+
+## How to Use
 
 We’ll use data from `gapminder` and `palmerpenguins` to demonstrate
 `ggroove`.
@@ -121,7 +123,7 @@ We’ll use data from `gapminder` and `palmerpenguins` to demonstrate
 ### A continous colorramp
 
 Here’s a continuous colorramp based on OK Computer (again, probably best
-not to use this for continuous scales\!)
+not to use `ggroove` for continuous scales\!)
 
 ``` r
 library(ggplot2)
@@ -147,9 +149,9 @@ penguins %>%
 
 <img src="man/figures/README-unnamed-chunk-13-1.png" width="100%" />
 
+And some discrete penguins as well
+
 ``` r
-
-
 
 penguins %>% 
   ggplot(aes(bill_length_mm, bill_depth_mm, color = species)) + 
@@ -158,7 +160,7 @@ penguins %>%
 #> Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
-<img src="man/figures/README-unnamed-chunk-13-2.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-14-1.png" width="100%" />
 
 ### A better use with discrete Fills
 
@@ -175,7 +177,7 @@ gapminder::gapminder %>%
 #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="man/figures/README-unnamed-chunk-14-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-15-1.png" width="100%" />
 
 ### … The Beatles\!
 
@@ -192,4 +194,4 @@ gapminder::gapminder %>%
 #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="man/figures/README-unnamed-chunk-15-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-16-1.png" width="100%" />
