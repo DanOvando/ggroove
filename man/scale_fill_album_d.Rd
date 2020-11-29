@@ -20,11 +20,13 @@ scale_fill_album_d(
 )
 }
 \arguments{
+\item{album}{the album selected, e.g. album = "in_rainbows"}
+
 \item{discrete}{}
 }
 \value{
 
 }
 \description{
-scale_fill_album_d
+Create a discrete fill based on an album
 }

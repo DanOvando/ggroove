@@ -2,7 +2,7 @@
 % Please edit documentation in R/scale-fill-album.R
 \name{scale_fill_album_c}
 \alias{scale_fill_album_c}
-\title{scale_fill_radiohead_c}
+\title{scale_fill_album_c}
 \usage{
 scale_fill_album_c(
   ...,
@@ -20,11 +20,13 @@ scale_fill_album_c(
 )
 }
 \arguments{
+\item{album}{the album selected, e.g. album = "in_rainbows"}
+
 \item{discrete}{}
 }
 \value{
 
 }
 \description{
-scale_fill_radiohead_c
+#' Create a continuous fill based on an album
 }

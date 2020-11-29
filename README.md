@@ -6,8 +6,8 @@
 There are two colors in my head. But we’ll need a few more to make
 plots.
 
-`ggroove` is a package of ggplot2 color palette functions based on album
-art.
+`ggroove` is a package of color palettes and ggplot2 `scale_` functions
+inspired by various album covers.
 
 You can install the development version here
 
@@ -15,21 +15,28 @@ You can install the development version here
 remotes::install_github("danovando/ggroove")
 ```
 
-The first entry is from Radiohead, which gets a series of specific
-functions in the form
+The first entries in the `ggroove` library come from Radiohead’s studio
+LPs, which gets a series of specific functions in the form
 
-`scale_fill_radiohead_d` and `scale_color_radiohead_c`
+`scale_fill_radiohead_d` and `scale_color_radiohead_c`, where `_d`
+indicates discrete and `_c` indicates continuous.
 
-But, plenty more to come, and a portal to upload your own album-inspired
-color palettes is in the works\!
+As other artists are added, you can use color palettes from any included
+album using
+
+`scale_fill_album_d` and `scale_color_album_c`
+
+If you’d like to submit a color palette to `ggroove`, see instructions
+[here](https://danovando.github.io/ggroove/articles/contributing.html)
 
 A quick note, there’s a lot of science out there on how to construct
-color palettes that accurately convey information. These are not those.
-Color schemes that make for great album art are not necessarily designed
-to convey information.
+color palettes that accurately convey information.
 
-I wouldn’t recommend using these for continuous color scales, if you’ve
-got a few discrete categories rock on.
+***These are not those.***
+
+Color schemes that make for great album art are not necessarily designed
+to convey information. I wouldn’t recommend using these for continuous
+color scales, if you’ve got a few discrete categories rock on.
 
 ### Radiohead Palettes
 
@@ -134,7 +141,7 @@ library(gapminder)
 penguins %>% 
   ggplot(aes(bill_length_mm, bill_depth_mm, color = body_mass_g)) + 
   geom_point(size = 4) + 
-  scale_color_radiohead_c(album = "ok_computer")
+  scale_color_radiohead_c(album = "ok_computer", direction = 1)
 #> Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -147,7 +154,7 @@ penguins %>%
 penguins %>% 
   ggplot(aes(bill_length_mm, bill_depth_mm, color = species)) + 
   geom_point(size = 4) + 
-  scale_color_radiohead_d(album = "in_rainbows")
+  scale_color_radiohead_d(album = "in_rainbows", direction = 1)
 #> Warning: Removed 2 rows containing missing values (geom_point).
 ```
 

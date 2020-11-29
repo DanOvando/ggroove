@@ -3,7 +3,7 @@
 \name{scale_fill_radiohead_d}
 \alias{scale_fill_radiohead_d}
 \title{scale_fill_radiohead_d
-discrete}
+Uses the radiohead album selected to create a discrete fill}
 \usage{
 scale_fill_radiohead_d(
   ...,
@@ -21,6 +21,16 @@ scale_fill_radiohead_d(
 )
 }
 \arguments{
+\item{alpha}{pass through parameter to ggplot}
+
+\item{begin}{The (corrected) hue in \link{0,1} at which the radiohead colormap begins.}
+
+\item{end}{The (corrected) hue in \link{0,1} at which the radiohead colormap begins.}
+
+\item{direction}{Sets the order of colors in the scale. If 1, the default, colors are as output by viridis_pal. If -1, the order of colors is reversed.}
+
+\item{album}{the radiohead album to select, e.g. album = "ok_computer"}
+
 \item{discrete}{}
 }
 \value{
@@ -28,5 +38,5 @@ scale_fill_radiohead_d(
 }
 \description{
 scale_fill_radiohead_d
-discrete
+Uses the radiohead album selected to create a discrete fill
 }

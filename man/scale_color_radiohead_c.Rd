@@ -20,11 +20,13 @@ scale_color_radiohead_c(
 )
 }
 \arguments{
+\item{album}{the radiohead album to select, e.g. album = "ok_computer"}
+
 \item{discrete}{}
 }
 \value{
 
 }
 \description{
-scale_color_radiohead_c
+Create a continuous color scale based on a selected radiohead album
 }

@@ -1,13 +1,13 @@
 
 #' scale_color_radiohead_d
-#' discrete
+#' Create a discrete color scale based on a selected radiohead album
 #'
 #' @param ...
 #' @param alpha
 #' @param begin
 #' @param end
 #' @param direction
-#' @param album
+#' @param album the radiohead album to select, e.g. album = "ok_computer"
 #' @param values
 #' @param space
 #' @param na.value
@@ -36,12 +36,14 @@ scale_color_radiohead_d <- function(..., alpha = 1, begin = 0, end = 1,
 
 #' scale_color_radiohead_c
 #'
+#' Create a continuous color scale based on a selected radiohead album
+#'
 #' @param ...
 #' @param alpha
 #' @param begin
 #' @param end
 #' @param direction
-#' @param album
+#' @param album the radiohead album to select, e.g. album = "ok_computer"
 #' @param values
 #' @param space
 #' @param na.value
@@ -59,10 +61,8 @@ scale_color_radiohead_c <- function(..., alpha = 1, begin = 0, end = 1,
                                    guide = "colourbar", aesthetics = "color",
                                    discrete = TRUE) {
 
-  #
-  # ggplot2::discrete_scale(aesthetics, "radiohead",
-  #                         ggroove_pal(alpha, begin, end, direction, album))
-  #
+
+
   ggplot2::scale_color_gradientn(colours =
                                   album(256, alpha, begin, end, direction, lp = album))
 

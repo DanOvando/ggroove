@@ -1,12 +1,14 @@
 
 #' scale_fill_album_d
 #'
+#' Create a discrete fill based on an album
+#'
 #' @param ...
 #' @param alpha
 #' @param begin
 #' @param end
 #' @param direction
-#' @param album
+#' @param album the album selected, e.g. album = "in_rainbows"
 #' @param values
 #' @param space
 #' @param na.value
@@ -24,23 +26,22 @@ scale_fill_album_d <- function(..., alpha = 1, begin = 0, end = 1,
                                    discrete = TRUE) {
 
 
-  ggplot2::discrete_scale(aesthetics, "radiohead",
+  ggplot2::discrete_scale(aesthetics, "album",
                           ggroove_pal(alpha, begin, end, direction, album))
-
-  # scale_color_gradientn(colours =
-  #                         album(256, alpha, begin, end, direction, lp = "in_rainbows"))
-
 
 }
 
-#' scale_fill_radiohead_c
+#' scale_fill_album_c
+#'
+#' #' Create a continuous fill based on an album
+
 #'
 #' @param ...
 #' @param alpha
 #' @param begin
 #' @param end
 #' @param direction
-#' @param album
+#' @param album the album selected, e.g. album = "in_rainbows"
 #' @param values
 #' @param space
 #' @param na.value
@@ -58,10 +59,7 @@ scale_fill_album_c <- function(..., alpha = 1, begin = 0, end = 1,
                                    guide = "colourbar", aesthetics = "fill",
                                    discrete = TRUE) {
 
-  #
-  # ggplot2::discrete_scale(aesthetics, "radiohead",
-  #                         ggroove_pal(alpha, begin, end, direction, album))
-  #
+
   ggplot2::scale_fill_gradientn(colours =
                                   album(256, alpha, begin, end, direction, lp = album))
 

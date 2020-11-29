@@ -3,7 +3,7 @@
 \name{scale_color_radiohead_d}
 \alias{scale_color_radiohead_d}
 \title{scale_color_radiohead_d
-discrete}
+Create a discrete color scale based on a selected radiohead album}
 \usage{
 scale_color_radiohead_d(
   ...,
@@ -21,6 +21,8 @@ scale_color_radiohead_d(
 )
 }
 \arguments{
+\item{album}{the radiohead album to select, e.g. album = "ok_computer"}
+
 \item{discrete}{}
 }
 \value{
@@ -28,5 +30,5 @@ scale_color_radiohead_d(
 }
 \description{
 scale_color_radiohead_d
-discrete
+Create a discrete color scale based on a selected radiohead album
 }

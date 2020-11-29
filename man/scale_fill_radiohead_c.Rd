@@ -20,6 +20,8 @@ scale_fill_radiohead_c(
 )
 }
 \arguments{
+\item{album}{the radiohead album to select, e.g. album = "ok_computer"}
+
 \item{discrete}{}
 }
 \value{
