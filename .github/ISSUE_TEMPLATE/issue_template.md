@@ -1,14 +1,18 @@
 ---
-name: Bug report or feature request
-about: Describe a bug you've seen or make a case for a new feature
+name: Submit album color palette
+about: Use this to submit a new album artwork inspired color palette for `ggroove`
 ---
 
-Please briefly describe your problem and what output you expect. If you have a question, please don't use this form. Instead, ask on <https://stackoverflow.com/> or <https://community.rstudio.com/>.
+To submit an issue with a request for a new color palette, enter the artist, album, and hex codes in the table format shown below.
 
-Please include a minimal reproducible example (AKA a reprex). If you've never heard of a [reprex](http://reprex.tidyverse.org/) before, start by reading <https://www.tidyverse.org/help/#reprex>.
+Please only use lowercase letters, and use camel\_case for the album title.
 
-Brief description of the problem
+You can get HEX codes for your color palette using an illustrator program like Adobe Photoshop or Inkscape, or by going to <https://coolors.co/app>
 
-```r
-# insert reprex here
-```
+| artist    | album        | hex          |
+|-----------|--------------|--------------|
+| radiohead | in\_rainbows | "\#020202ff" |
+| radiohead | in\_rainbows | "\#efe955ff" |
+| radiohead | in\_rainbows | "\#437ec3ff" |
+|           |              |              |
+|           |              |              |

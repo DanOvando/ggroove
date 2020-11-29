@@ -140,6 +140,19 @@ penguins %>%
 
 <img src="man/figures/README-unnamed-chunk-13-1.png" width="100%" />
 
+``` r
+
+
+
+penguins %>% 
+  ggplot(aes(bill_length_mm, bill_depth_mm, color = species)) + 
+  geom_point(size = 4) + 
+  scale_color_radiohead_d(album = "in_rainbows")
+#> Warning: Removed 2 rows containing missing values (geom_point).
+```
+
+<img src="man/figures/README-unnamed-chunk-13-2.png" width="100%" />
+
 ### A better use with discrete Fills
 
 Here’s a more appropriate example showing discrete fills

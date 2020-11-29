@@ -151,6 +151,13 @@ penguins %>%
   ggplot(aes(bill_length_mm, bill_depth_mm, color = body_mass_g)) + 
   geom_point(size = 4) + 
   scale_color_radiohead_c(album = "ok_computer")
+
+
+
+penguins %>% 
+  ggplot(aes(bill_length_mm, bill_depth_mm, color = species)) + 
+  geom_point(size = 4) + 
+  scale_color_radiohead_d(album = "in_rainbows")
 ```
 
 
