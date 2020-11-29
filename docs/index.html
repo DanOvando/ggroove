@@ -90,20 +90,30 @@
 <a href="#ggroove-" class="anchor"></a>ggroove <img src="logo.png" align="right" width="120">
 </h1></div>
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-<p>There are two colors in my head. But we’ll need a few more to make plots.</p>
-<p><code>ggroove</code> is a package of ggplot2 color palette functions based on album art.</p>
+<p><a href="https://youtu.be/NUnXxh5U25Y?t=132">There are two colors in my head</a>. But we’ll need a few more to make plots.</p>
+<p><code>ggroove</code> is a package of color palettes and ggplot2 <code>scale_</code> functions inspired by various album covers.</p>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the development version here</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"danovando/ggroove"</span><span class="op">)</span></code></pre></div>
-<p>The first entry is from Radiohead, which gets a series of specific functions in the form</p>
-<p><code>scale_fill_radiohead_d</code> and <code>scale_color_radiohead_c</code></p>
-<p>But, plenty more to come, and a portal to upload your own album-inspired color palettes is in the works!</p>
-<p>A quick note, there’s a lot of science out there on how to construct color palettes that accurately convey information. These are not those. Color schemes that make for great album art are not necessarily designed to convey information.</p>
-<p>I wouldn’t recommend using these for continuous color scales, if you’ve got a few discrete categories rock on.</p>
-<div id="radiohead-palettes" class="section level3">
-<h3 class="hasAnchor">
-<a href="#radiohead-palettes" class="anchor"></a>Radiohead Palettes</h3>
 </div>
+<div id="overview" class="section level2">
+<h2 class="hasAnchor">
+<a href="#overview" class="anchor"></a>Overview</h2>
+<p>The first entries in the <code>ggroove</code> library come from <a href="https://radiohead.com/library/">Radiohead’s</a> studio LPs, which gets a series of specific functions in the form</p>
+<p><code>scale_fill_radiohead_d</code> and <code>scale_color_radiohead_c</code>, where <code>_d</code> indicates discrete and <code>_c</code> indicates continuous.</p>
+<p>As other artists are added, you can use color palettes from any included album using</p>
+<p><code>scale_fill_album_d</code> and <code>scale_color_album_c</code></p>
+<p>If you’d like to submit a color palette to <code>ggroove</code>, see instructions <a href="https://danovando.github.io/ggroove/articles/contributing.html">here</a></p>
+<p>A quick note, there’s a lot of science out there on how to construct color palettes that accurately convey information.</p>
+<p><strong><em>These are not those.</em></strong></p>
+<p>Color schemes that make for great album art are not necessarily designed to convey information. I wouldn’t recommend using these for continuous color scales, if you’ve got a few discrete categories rock on.</p>
+</div>
+<div id="radiohead-palettes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#radiohead-palettes" class="anchor"></a>Radiohead Palettes</h2>
 <div id="pablo-honey" class="section level3">
 <h3 class="hasAnchor">
 <a href="#pablo-honey" class="anchor"></a>Pablo Honey</h3>
@@ -167,13 +177,17 @@
 <a href="#a-moon-shaped-pool" class="anchor"></a>A Moon Shaped Pool</h3>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/plot_palette.html">plot_palette</a></span><span class="op">(</span>lp <span class="op">=</span> <span class="st">"a_moon_shaped_pool"</span><span class="op">)</span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-12-1.png" width="100%"> ## How to Use</p>
-<p>We’ll use data from <code>gapminder</code> and <code>palmerpenguins</code> to demonstrate <code>ggroove</code>.</p>
+<p><img src="reference/figures/README-unnamed-chunk-12-1.png" width="100%"></p>
 </div>
+</div>
+<div id="how-to-use" class="section level2">
+<h2 class="hasAnchor">
+<a href="#how-to-use" class="anchor"></a>How to Use</h2>
+<p>We’ll use data from <code>gapminder</code> and <code>palmerpenguins</code> to demonstrate <code>ggroove</code>.</p>
 <div id="a-continous-colorramp" class="section level3">
 <h3 class="hasAnchor">
 <a href="#a-continous-colorramp" class="anchor"></a>A continous colorramp</h3>
-<p>Here’s a continuous colorramp based on OK Computer (again, probably best not to use this for continuous scales!)</p>
+<p>Here’s a continuous colorramp based on OK Computer (again, probably best not to use <code>ggroove</code> for continuous scales!)</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
@@ -192,19 +206,18 @@
 <span class="va">penguins</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">bill_length_mm</span>, <span class="va">bill_depth_mm</span>, color <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="reference/scale_color_radiohead_c.html">scale_color_radiohead_c</a></span><span class="op">(</span>album <span class="op">=</span> <span class="st">"ok_computer"</span><span class="op">)</span>
+  <span class="fu"><a href="reference/scale_color_radiohead_c.html">scale_color_radiohead_c</a></span><span class="op">(</span>album <span class="op">=</span> <span class="st">"ok_computer"</span>, direction <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
 <span class="co">#&gt; Warning: Removed 2 rows containing missing values (geom_point).</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-13-1.png" width="100%"></p>
+<p>And some discrete penguins as well</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
-
-
 <span class="va">penguins</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">bill_length_mm</span>, <span class="va">bill_depth_mm</span>, color <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="reference/scale_color_radiohead_d.html">scale_color_radiohead_d</a></span><span class="op">(</span>album <span class="op">=</span> <span class="st">"in_rainbows"</span><span class="op">)</span>
+  <span class="fu"><a href="reference/scale_color_radiohead_d.html">scale_color_radiohead_d</a></span><span class="op">(</span>album <span class="op">=</span> <span class="st">"in_rainbows"</span>, direction <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
 <span class="co">#&gt; Warning: Removed 2 rows containing missing values (geom_point).</span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-13-2.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-14-1.png" width="100%"></p>
 </div>
 <div id="a-better-use-with-discrete-fills" class="section level3">
 <h3 class="hasAnchor">
@@ -219,7 +232,7 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_dark</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-14-1.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-15-1.png" width="100%"></p>
 </div>
 <div id="-the-beatles" class="section level3">
 <h3 class="hasAnchor">
@@ -234,7 +247,8 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_dark</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-15-1.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-16-1.png" width="100%"></p>
+</div>
 </div>
 </div>
   </div>
