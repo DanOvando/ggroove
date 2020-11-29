@@ -9,11 +9,15 @@ But we’ll need a few more to make plots.
 `ggroove` is a package of color palettes and ggplot2 `scale_` functions
 inspired by various album covers.
 
+## Installation
+
 You can install the development version here
 
 ``` r
 remotes::install_github("danovando/ggroove")
 ```
+
+## Overview
 
 The first entries in the `ggroove` library come from
 [Radiohead’s](https://radiohead.com/library/) studio LPs, which gets a
@@ -39,7 +43,7 @@ Color schemes that make for great album art are not necessarily designed
 to convey information. I wouldn’t recommend using these for continuous
 color scales, if you’ve got a few discrete categories rock on.
 
-### Radiohead Palettes
+## Radiohead Palettes
 
 ### Pablo Honey
 
