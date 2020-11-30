@@ -1,6 +1,6 @@
 Package: ggroove
 Title: Album Inspired Color Palettes
-Version: 1.0.0
+Version: 0.1.0.9000
 Authors@R: 
     person(given = "Dan",
            family = "Ovando",
