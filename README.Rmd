@@ -157,23 +157,39 @@ plot_palette(lp = "a_moon_shaped_pool")
 
 We'll use data from `gapminder` and `palmerpenguins` to demonstrate `ggroove`. 
 
-### A continous colorramp
-
-Here's a continuous colorramp based on OK Computer (again, probably best not to use `ggroove` for continuous scales!)
 
 ```{r}
+
 library(ggplot2)
 library(dplyr)
 library(ggroove)
 library(palmerpenguins)
 library(gapminder)
 
-penguins %>% 
-  ggplot(aes(bill_length_mm, bill_depth_mm, color = body_mass_g)) + 
-  geom_point(size = 4) + 
-  scale_color_radiohead_c(album = "ok_computer")
+ggplot2::theme_set(theme_minimal())
+
+gapminder::gapminder %>%
+  ggplot(aes(lifeExp, fill =  country)) +
+  geom_histogram(show.legend = FALSE) +
+  scale_fill_radiohead_d(album = "in_rainbows") +
+  theme_minimal()
+
 
 ```
+
+```{r}
+
+
+gapminder::gapminder %>%
+  ggplot(aes(lifeExp, fill =  continent)) +
+  geom_histogram(show.legend = FALSE) +
+  scale_fill_radiohead_d(album = "ok_computer") +
+  theme_minimal() + 
+  theme_dark()
+
+
+```
+
 
 And some discrete penguins as well
 
@@ -182,24 +198,24 @@ And some discrete penguins as well
 penguins %>% 
   ggplot(aes(bill_length_mm, bill_depth_mm, color = species)) + 
   geom_point(size = 4) + 
-  scale_color_radiohead_d(album = "in_rainbows", direction = 1, name = "test")
+  scale_color_radiohead_d(album = "in_rainbows", direction = 1)
 ```
 
 
-### A better use with discrete Fills
-Here's a more appropriate example showing discrete fills
+Here's a continuous colorramp based on The Bends (again, probably best not to use `ggroove` for continuous scales!)
 
 ```{r}
 
-gapminder::gapminder %>%
-  ggplot(aes(lifeExp, fill =  country)) +
-  geom_histogram(show.legend = FALSE) +
-  scale_fill_radiohead_d(album = "in_rainbows") +
-  theme_minimal() + 
-  theme_dark()
 
+penguins %>% 
+  ggplot(aes(bill_length_mm, bill_depth_mm, color = body_mass_g)) + 
+  geom_point(size = 4) + 
+  scale_color_radiohead_c(album = "the_bends", direction = -1)
 
 ```
+
+
+
 
 
 

@@ -124,12 +124,8 @@ plot_palette(lp = "a_moon_shaped_pool")
 We’ll use data from `gapminder` and `palmerpenguins` to demonstrate
 `ggroove`.
 
-### A continous colorramp
-
-Here’s a continuous colorramp based on OK Computer (again, probably best
-not to use `ggroove` for continuous scales\!)
-
 ``` r
+
 library(ggplot2)
 library(dplyr)
 #> 
@@ -144,14 +140,31 @@ library(ggroove)
 library(palmerpenguins)
 library(gapminder)
 
-penguins %>% 
-  ggplot(aes(bill_length_mm, bill_depth_mm, color = body_mass_g)) + 
-  geom_point(size = 4) + 
-  scale_color_radiohead_c(album = "ok_computer")
-#> Warning: Removed 2 rows containing missing values (geom_point).
+ggplot2::theme_set(theme_minimal())
+
+gapminder::gapminder %>%
+  ggplot(aes(lifeExp, fill =  country)) +
+  geom_histogram(show.legend = FALSE) +
+  scale_fill_radiohead_d(album = "in_rainbows") +
+  theme_minimal()
+#> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
 <img src="man/figures/README-unnamed-chunk-13-1.png" width="100%" />
+
+``` r
+
+
+gapminder::gapminder %>%
+  ggplot(aes(lifeExp, fill =  continent)) +
+  geom_histogram(show.legend = FALSE) +
+  scale_fill_radiohead_d(album = "ok_computer") +
+  theme_minimal() + 
+  theme_dark()
+#> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
+<img src="man/figures/README-unnamed-chunk-14-1.png" width="100%" />
 
 And some discrete penguins as well
 
@@ -160,28 +173,26 @@ And some discrete penguins as well
 penguins %>% 
   ggplot(aes(bill_length_mm, bill_depth_mm, color = species)) + 
   geom_point(size = 4) + 
-  scale_color_radiohead_d(album = "in_rainbows", direction = 1, name = "test")
+  scale_color_radiohead_d(album = "in_rainbows", direction = 1)
 #> Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
-<img src="man/figures/README-unnamed-chunk-14-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-15-1.png" width="100%" />
 
-### A better use with discrete Fills
-
-Here’s a more appropriate example showing discrete fills
+Here’s a continuous colorramp based on The Bends (again, probably best
+not to use `ggroove` for continuous scales\!)
 
 ``` r
 
-gapminder::gapminder %>%
-  ggplot(aes(lifeExp, fill =  country)) +
-  geom_histogram(show.legend = FALSE) +
-  scale_fill_radiohead_d(album = "in_rainbows") +
-  theme_minimal() + 
-  theme_dark()
-#> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+penguins %>% 
+  ggplot(aes(bill_length_mm, bill_depth_mm, color = body_mass_g)) + 
+  geom_point(size = 4) + 
+  scale_color_radiohead_c(album = "the_bends", direction = -1)
+#> Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
-<img src="man/figures/README-unnamed-chunk-15-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-16-1.png" width="100%" />
 
 ### Other Artists
 
@@ -215,7 +226,7 @@ gapminder::gapminder %>%
 #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="man/figures/README-unnamed-chunk-18-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-19-1.png" width="100%" />
 
 ## Non-ggplot2 use
 
@@ -230,7 +241,7 @@ continuous_pal <- album_pal(256, lp = "kid_a")
 image(volcano, col = continuous_pal)
 ```
 
-<img src="man/figures/README-unnamed-chunk-19-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-20-1.png" width="100%" />
 
 ``` r
 
@@ -239,7 +250,7 @@ discrete_pal <- album_pal(6, lp = "a_moon_shaped_pool")
 boxplot(count ~ spray, data = InsectSprays, col = discrete_pal)
 ```
 
-<img src="man/figures/README-unnamed-chunk-20-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-21-1.png" width="100%" />
 
 ## Credits
 
