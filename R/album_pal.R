@@ -1,16 +1,16 @@
 #' Generate album color palette
 #'
 #' @param n
-#' @param alpha
-#' @param begin
-#' @param end
-#' @param direction
-#' @param lp
+#' @param alpha pass through parameter to ggplot
+#' @param begin The (corrected) hue in [0,1] at which the radiohead colormap begins.
+#' @param end The (corrected) hue in [0,1] at which the radiohead colormap begins.
+#' @param direction Sets the order of colors in the scale. If 1, the default, colors are as output by album_pal If -1, the order of colors is reversed.
+#' @param lp the album to select, e.g. lp = "ok_computer"
 #'
 #' @return a color palette
 #' @export
 #'
-album <- function(n, alpha = 1, begin = 0, end = 1, direction = 1,
+album_pal <- function(n, alpha = 1, begin = 0, end = 1, direction = 1,
                   lp = "in_rainbows") {
 
   if (!lp %in% ggroove::ggroove_db$album) {

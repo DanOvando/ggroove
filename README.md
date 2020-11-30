@@ -147,7 +147,7 @@ library(gapminder)
 penguins %>% 
   ggplot(aes(bill_length_mm, bill_depth_mm, color = body_mass_g)) + 
   geom_point(size = 4) + 
-  scale_color_radiohead_c(album = "ok_computer", direction = 1)
+  scale_color_radiohead_c(album = "ok_computer")
 #> Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -160,7 +160,7 @@ And some discrete penguins as well
 penguins %>% 
   ggplot(aes(bill_length_mm, bill_depth_mm, color = species)) + 
   geom_point(size = 4) + 
-  scale_color_radiohead_d(album = "in_rainbows", direction = 1)
+  scale_color_radiohead_d(album = "in_rainbows", direction = 1, name = "test")
 #> Warning: Removed 2 rows containing missing values (geom_point).
 ```
 
@@ -226,7 +226,7 @@ You can use the `ggroove::album` function to generate a color palette
 based on your LP choice.
 
 ``` r
-continuous_pal <- album(256, lp = "kid_a")
+continuous_pal <- album_pal(256, lp = "kid_a")
 image(volcano, col = continuous_pal)
 ```
 
@@ -234,7 +234,7 @@ image(volcano, col = continuous_pal)
 
 ``` r
 
-discrete_pal <- album(6, lp = "a_moon_shaped_pool")
+discrete_pal <- album_pal(6, lp = "a_moon_shaped_pool")
 
 boxplot(count ~ spray, data = InsectSprays, col = discrete_pal)
 ```

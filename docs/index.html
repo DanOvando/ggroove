@@ -206,7 +206,7 @@
 <span class="va">penguins</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">bill_length_mm</span>, <span class="va">bill_depth_mm</span>, color <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="reference/scale_color_radiohead_c.html">scale_color_radiohead_c</a></span><span class="op">(</span>album <span class="op">=</span> <span class="st">"ok_computer"</span>, direction <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
+  <span class="fu"><a href="reference/scale_color_radiohead_c.html">scale_color_radiohead_c</a></span><span class="op">(</span>album <span class="op">=</span> <span class="st">"ok_computer"</span><span class="op">)</span>
 <span class="co">#&gt; Warning: Removed 2 rows containing missing values (geom_point).</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-13-1.png" width="100%"></p>
 <p>And some discrete penguins as well</p>
@@ -215,7 +215,7 @@
 <span class="va">penguins</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">bill_length_mm</span>, <span class="va">bill_depth_mm</span>, color <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="reference/scale_color_radiohead_d.html">scale_color_radiohead_d</a></span><span class="op">(</span>album <span class="op">=</span> <span class="st">"in_rainbows"</span>, direction <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
+  <span class="fu"><a href="reference/scale_color_radiohead_d.html">scale_color_radiohead_d</a></span><span class="op">(</span>album <span class="op">=</span> <span class="st">"in_rainbows"</span>, direction <span class="op">=</span> <span class="fl">1</span>, name <span class="op">=</span> <span class="st">"test"</span><span class="op">)</span>
 <span class="co">#&gt; Warning: Removed 2 rows containing missing values (geom_point).</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-14-1.png" width="100%"></p>
 </div>
@@ -264,14 +264,14 @@
 <h2 class="hasAnchor">
 <a href="#non-ggplot2-use" class="anchor"></a>Non-ggplot2 use</h2>
 <p>I’ve built this package mostly around <code>ggplot2</code> users, but base plot users can use it too.</p>
-<p>You can use the <code><a href="reference/album.html">ggroove::album</a></code> function to generate a color palette based on your LP choice.</p>
+<p>You can use the <code>ggroove::album</code> function to generate a color palette based on your LP choice.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">continuous_pal</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/album.html">album</a></span><span class="op">(</span><span class="fl">256</span>, lp <span class="op">=</span> <span class="st">"kid_a"</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">continuous_pal</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/album_pal.html">album_pal</a></span><span class="op">(</span><span class="fl">256</span>, lp <span class="op">=</span> <span class="st">"kid_a"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/image.html">image</a></span><span class="op">(</span><span class="va">volcano</span>, col <span class="op">=</span> <span class="va">continuous_pal</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-19-1.png" width="100%"></p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
-<span class="va">discrete_pal</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/album.html">album</a></span><span class="op">(</span><span class="fl">6</span>, lp <span class="op">=</span> <span class="st">"a_moon_shaped_pool"</span><span class="op">)</span>
+<span class="va">discrete_pal</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/album_pal.html">album_pal</a></span><span class="op">(</span><span class="fl">6</span>, lp <span class="op">=</span> <span class="st">"a_moon_shaped_pool"</span><span class="op">)</span>
 
 <span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">count</span> <span class="op">~</span> <span class="va">spray</span>, data <span class="op">=</span> <span class="va">InsectSprays</span>, col <span class="op">=</span> <span class="va">discrete_pal</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-20-1.png" width="100%"></p>

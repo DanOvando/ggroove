@@ -12,12 +12,7 @@ scale_fill_radiohead_d(
   end = 1,
   direction = 1,
   album = "in_rainbows",
-  values = NULL,
-  space = "Lab",
-  na.value = "grey50",
-  guide = "colourbar",
-  aesthetics = "fill",
-  discrete = TRUE
+  aesthetics = "fill"
 )
 }
 \arguments{
@@ -27,11 +22,11 @@ scale_fill_radiohead_d(
 
 \item{end}{The (corrected) hue in \link{0,1} at which the radiohead colormap begins.}
 
-\item{direction}{Sets the order of colors in the scale. If 1, the default, colors are as output by viridis_pal. If -1, the order of colors is reversed.}
+\item{direction}{Sets the order of colors in the scale. If 1, the default, colors are as output by album_pal If -1, the order of colors is reversed.}
 
 \item{album}{the radiohead album to select, e.g. album = "ok_computer"}
 
-\item{discrete}{}
+\item{aesthetics}{}
 }
 \value{
 

@@ -144,24 +144,31 @@
   end <span class='op'>=</span> <span class='fl'>1</span>,
   direction <span class='op'>=</span> <span class='fl'>1</span>,
   album <span class='op'>=</span> <span class='st'>"in_rainbows"</span>,
-  values <span class='op'>=</span> <span class='cn'>NULL</span>,
-  space <span class='op'>=</span> <span class='st'>"Lab"</span>,
-  na.value <span class='op'>=</span> <span class='st'>"grey50"</span>,
-  guide <span class='op'>=</span> <span class='st'>"colourbar"</span>,
-  aesthetics <span class='op'>=</span> <span class='st'>"fill"</span>,
-  discrete <span class='op'>=</span> <span class='cn'>TRUE</span>
+  n <span class='op'>=</span> <span class='fl'>256</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>album</th>
-      <td><p>the radiohead album to select, e.g. album = "ok_computer"</p></td>
+      <th>alpha</th>
+      <td><p>pass through parameter to ggplot</p></td>
     </tr>
     <tr>
-      <th>discrete</th>
-      <td></td>
+      <th>begin</th>
+      <td><p>The (corrected) hue in 0,1 at which the radiohead colormap begins.</p></td>
+    </tr>
+    <tr>
+      <th>end</th>
+      <td><p>The (corrected) hue in 0,1 at which the radiohead colormap begins.</p></td>
+    </tr>
+    <tr>
+      <th>direction</th>
+      <td><p>Sets the order of colors in the scale. If 1, the default, colors are as output by album_pal If -1, the order of colors is reversed.</p></td>
+    </tr>
+    <tr>
+      <th>album</th>
+      <td><p>the radiohead album to select, e.g. album = "ok_computer"</p></td>
     </tr>
     </table>
 

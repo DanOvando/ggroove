@@ -11,18 +11,21 @@ scale_fill_album_c(
   end = 1,
   direction = 1,
   album = "in_rainbows",
-  values = NULL,
-  space = "Lab",
-  na.value = "grey50",
-  guide = "colourbar",
-  aesthetics = "fill",
-  discrete = TRUE
+  n = 256
 )
 }
 \arguments{
-\item{album}{the album selected, e.g. album = "in_rainbows"}
+\item{alpha}{pass through parameter to ggplot}
 
-\item{discrete}{}
+\item{begin}{The (corrected) hue in \link{0,1} at which the radiohead colormap begins.}
+
+\item{end}{The (corrected) hue in \link{0,1} at which the radiohead colormap begins.}
+
+\item{direction}{Sets the order of colors in the scale. If 1, the default, colors are as output by album_pal If -1, the order of colors is reversed.}
+
+\item{album}{the album to select, e.g. album = "ok_computer"}
+
+\item{aesthetics}{}
 }
 \value{
 
