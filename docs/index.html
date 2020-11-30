@@ -234,11 +234,21 @@
 <span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-15-1.png" width="100%"></p>
 </div>
-<div id="-the-beatles" class="section level3">
+<div id="other-artists" class="section level3">
 <h3 class="hasAnchor">
-<a href="#-the-beatles" class="anchor"></a>… The Beatles!</h3>
-<p>And one more with The Beatles!</p>
+<a href="#other-artists" class="anchor"></a>Other Artists</h3>
+<p>You can view all the artists / albums currently present in <code>ggroove</code> by examining the <code>ggroove</code> database in <code>ggroove::ggroove_db</code></p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ggroove_db</span><span class="op">$</span><span class="va">artist</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; [1] "radiohead"   "the_beatles"</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ggroove_db</span><span class="op">$</span><span class="va">album</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt;  [1] "in_rainbows"        "ok_computer"        "kid_a"             </span>
+<span class="co">#&gt;  [4] "the_king_of_limbs"  "amnesiac"           "hail_to_the_thief" </span>
+<span class="co">#&gt;  [7] "the_bends"          "pablo_honey"        "a_moon_shaped_pool"</span>
+<span class="co">#&gt; [10] "the_white_album"</span></code></pre></div>
+<p>At the moment, we only have one non-Radiohead artist / album in the package, but more to come!</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="fu">gapminder</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/gapminder/man/gapminder.html">gapminder</a></span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">lifeExp</span>, fill <span class="op">=</span>  <span class="va">continent</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
@@ -247,8 +257,29 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_dark</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-16-1.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-18-1.png" width="100%"></p>
 </div>
+</div>
+<div id="non-ggplot2-use" class="section level2">
+<h2 class="hasAnchor">
+<a href="#non-ggplot2-use" class="anchor"></a>Non-ggplot2 use</h2>
+<p>I’ve built this package mostly around <code>ggplot2</code> users, but base plot users can use it too.</p>
+<p>You can use the <code><a href="reference/album.html">ggroove::album</a></code> function to generate a color palette based on your LP choice.</p>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">continuous_pal</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/album.html">album</a></span><span class="op">(</span><span class="fl">256</span>, lp <span class="op">=</span> <span class="st">"kid_a"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/image.html">image</a></span><span class="op">(</span><span class="va">volcano</span>, col <span class="op">=</span> <span class="va">continuous_pal</span><span class="op">)</span></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-19-1.png" width="100%"></p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="va">discrete_pal</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/album.html">album</a></span><span class="op">(</span><span class="fl">6</span>, lp <span class="op">=</span> <span class="st">"a_moon_shaped_pool"</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">count</span> <span class="op">~</span> <span class="va">spray</span>, data <span class="op">=</span> <span class="va">InsectSprays</span>, col <span class="op">=</span> <span class="va">discrete_pal</span><span class="op">)</span></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-20-1.png" width="100%"></p>
+</div>
+<div id="credits" class="section level2">
+<h2 class="hasAnchor">
+<a href="#credits" class="anchor"></a>Credits</h2>
+<p>Code and concept for this package was adapted from the amazing <a href="https://nschiett.github.io/fishualize/index.html"><code>fishualize</code></a> and <a href="https://github.com/karthik/wesanderson"><code>wesanderson</code></a> packages.</p>
 </div>
 </div>
   </div>
