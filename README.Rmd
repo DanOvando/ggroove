@@ -20,13 +20,13 @@ library(ggroove)
 
 ```{r, echo = FALSE, include=FALSE, eval=FALSE}
 library(png)
-test <- readPNG(here::here("data","bear.png"))
+test <- readPNG(here::here("imgs","test.png"))
 
 img.r <- as.raster(test,interpolate=F)
 
 rows <- nrow(img.r)
 
-cols <- ggroove::ggroove_db$hex[ggroove::ggroove_db$album == "ok_computer"]
+cols <- ggroove::ggroove_db$hex[ggroove::ggroove_db$album == "in_rainbows"]
 
 rows_per_col <- round(rows / length(cols))
 
@@ -40,6 +40,15 @@ for (i in 1:rows){
 
 plot(img.r)
 
+png("hex.png")
+plot(img.r)
+dev.off()
+
+library(hexSticker)
+
+imgurl <- here::here("hex.png")
+sticker(imgurl, package="hexSticker", p_size=20, s_x=1, s_y=.75, s_width=.6,
+        filename="test.png")
 
 ```
 
@@ -73,6 +82,8 @@ A quick note, there's a lot of science out there on how to construct color palet
 ***These are not those.***
 
 Color schemes that make for great album art are not necessarily designed to convey information. I wouldn't recommend using these for continuous color scales, if you've got a few discrete categories rock on. 
+
+
 
 ## Radiohead Palettes 
 ### Pablo Honey
@@ -192,10 +203,22 @@ gapminder::gapminder %>%
 
 
 
-### ... The Beatles!
+### Other Artists
 
-And one more with The Beatles!
+You can view all the artists / albums currently present in `ggroove` by examining the `ggroove` database in `ggroove::ggroove_db`
 
+```{r}
+ggroove_db$artist %>% unique()
+
+```
+
+
+```{r}
+ggroove_db$album %>% unique()
+
+```
+
+At the moment, we only have one non-Radiohead artist / album in the package, but more to come!
 
 ```{r}
 
@@ -208,4 +231,32 @@ gapminder::gapminder %>%
 
 
 ```
+
+## Non-ggplot2 use
+
+I've built this package mostly around `ggplot2` users, but base plot users can use it too. 
+
+
+You can use the `ggroove::album` function to generate a color palette based on your LP choice. 
+
+```{r}
+continuous_pal <- album(256, lp = "kid_a")
+image(volcano, col = continuous_pal)
+```
+
+
+```{r}
+
+discrete_pal <- album(6, lp = "a_moon_shaped_pool")
+
+boxplot(count ~ spray, data = InsectSprays, col = discrete_pal)
+
+```
+
+
+## Credits
+
+Code and concept for this package was adapted from the amazing [`fishualize`](https://nschiett.github.io/fishualize/index.html) and [`wesanderson`](https://github.com/karthik/wesanderson) packages.
+
+
 

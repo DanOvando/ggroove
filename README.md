@@ -183,9 +183,26 @@ gapminder::gapminder %>%
 
 <img src="man/figures/README-unnamed-chunk-15-1.png" width="100%" />
 
-### … The Beatles\!
+### Other Artists
 
-And one more with The Beatles\!
+You can view all the artists / albums currently present in `ggroove` by
+examining the `ggroove` database in `ggroove::ggroove_db`
+
+``` r
+ggroove_db$artist %>% unique()
+#> [1] "radiohead"   "the_beatles"
+```
+
+``` r
+ggroove_db$album %>% unique()
+#>  [1] "in_rainbows"        "ok_computer"        "kid_a"             
+#>  [4] "the_king_of_limbs"  "amnesiac"           "hail_to_the_thief" 
+#>  [7] "the_bends"          "pablo_honey"        "a_moon_shaped_pool"
+#> [10] "the_white_album"
+```
+
+At the moment, we only have one non-Radiohead artist / album in the
+package, but more to come\!
 
 ``` r
 
@@ -198,4 +215,34 @@ gapminder::gapminder %>%
 #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="man/figures/README-unnamed-chunk-16-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-18-1.png" width="100%" />
+
+## Non-ggplot2 use
+
+I’ve built this package mostly around `ggplot2` users, but base plot
+users can use it too.
+
+You can use the `ggroove::album` function to generate a color palette
+based on your LP choice.
+
+``` r
+continuous_pal <- album(256, lp = "kid_a")
+image(volcano, col = continuous_pal)
+```
+
+<img src="man/figures/README-unnamed-chunk-19-1.png" width="100%" />
+
+``` r
+
+discrete_pal <- album(6, lp = "a_moon_shaped_pool")
+
+boxplot(count ~ spray, data = InsectSprays, col = discrete_pal)
+```
+
+<img src="man/figures/README-unnamed-chunk-20-1.png" width="100%" />
+
+## Credits
+
+Code and concept for this package was adapted from the amazing
+[`fishualize`](https://nschiett.github.io/fishualize/index.html) and
+[`wesanderson`](https://github.com/karthik/wesanderson) packages.

@@ -1,5 +1,5 @@
 # misc
-
+*.pptx
 # History files
 .Rhistory
 .Rapp.history
